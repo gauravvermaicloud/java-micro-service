@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.microservice.entities</groupId>
+  <artifactId>microservice-entity</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>microservice-entity</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jackson.version>2.9.0</jackson.version>
+	<javax.version>2.5</javax.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+  <groupId>junit</groupId> 
+  <artifactId>junit-dep</artifactId>
+  <version>4.8.2</version>
+</dependency>
+    
+    
+    <!-- This is the maven dependency for Jackson Object mapper for 
+    conversion of objects to JSON, maps etc -->
+    <dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+    	<artifactId>jackson-databind</artifactId>
+    	<version>${jackson.version}</version>
+    </dependency>
+    
+    <!-- Jackson dependencies for xml serialization and deserialization -->
+    <dependency>
+    	<groupId>com.fasterxml.jackson.dataformat</groupId>
+    	<artifactId>jackson-dataformat-xml</artifactId>
+    	<version>${jackson.version}</version>
+    </dependency>
+    
+    <!-- Dependencies for Javax Servlet for HttpRequest and Response -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>${javax.version}</version>
+	</dependency>
+  
+  </dependencies>
+</project>

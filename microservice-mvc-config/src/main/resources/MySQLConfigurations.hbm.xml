@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 Oct, 2014 2:29:42 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+<class name="com.microservice.entities.ConfigurationItem" table="Configurations">
+		<id name="id" column="Id">
+			<generator class="identity"/>		
+		</id>
+		<property name="key" column="key"/>		
+		<property name="value" column="value"/>		
+		<property name="version" column="Version"/>
+		<property name="applicationName" column="applicationName"/>
+		<property name="machineName" column="machineName" />
+	</class>
+</hibernate-mapping>
