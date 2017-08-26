@@ -83,12 +83,18 @@ public class ConfigurationController {
 			@PathVariable("machineName") String machineName
 			){
 		 Map<String,ConfigurationItem> configurationMap = new HashMap<String, ConfigurationItem>();
-		 configurationMap = mapConfigurations(this.getConfigurationFor("ALL","ALL","ALL"), configurationMap);
-		 configurationMap = mapConfigurations(this.getConfigurationFor(applicationName,"ALL","ALL"), configurationMap);
-		 configurationMap = mapConfigurations(this.getConfigurationFor("ALL",applicationVersion,"ALL"), configurationMap);
-		 configurationMap = mapConfigurations(this.getConfigurationFor("ALL","ALL",machineName), configurationMap);
-		 configurationMap = mapConfigurations(this.getConfigurationFor(applicationName,applicationVersion,"ALL"), configurationMap);
-		 configurationMap = mapConfigurations(this.getConfigurationFor(applicationName,applicationVersion,machineName), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor("ALL","ALL","ALL"), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor(applicationName,"ALL","ALL"), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor("ALL",applicationVersion,"ALL"), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor("ALL","ALL",machineName), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor(applicationName,applicationVersion,"ALL"), configurationMap);
+		 configurationMap = mapConfigurations(
+				 this.getConfigurationFor(applicationName,applicationVersion,machineName), configurationMap);
 		 return configurationMap;
 	}
 
@@ -115,7 +121,7 @@ public class ConfigurationController {
 	 * @param queryParameters The query parameters
 	 * @return a list of type
 	 */
-	public <T> List<T> executeSelect(String hSQLQuery,
+	private <T> List<T> executeSelect(String hSQLQuery,
 			Map<String, Object> queryParameters) {
 		Session session = null;
 		try {

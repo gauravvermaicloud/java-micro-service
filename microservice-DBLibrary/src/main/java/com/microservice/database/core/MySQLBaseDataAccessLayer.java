@@ -1,13 +1,13 @@
 package com.microservice.database.core;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class MySQLBaseDataAccessLayer {
-	/**
-	 * This is the logger
-	 */
-	private Logger logger = Logger.getInstance(MySQLBaseDataAccessLayer.class);
+
 	/**
 	 * This method creates an object in the database
 	 * 
@@ -97,7 +97,7 @@ public class MySQLBaseDataAccessLayer {
 	 *            The item to be deleted
 	 */
 	public <T> void delete(T t) {
-		BoilerplateList<Object> objects = new BoilerplateList<Object>();
+		List<Object> objects = new ArrayList<Object>();
 		objects.add(t);
 		this.delete(objects);
 	}
@@ -147,7 +147,7 @@ public class MySQLBaseDataAccessLayer {
 	 */
 	// TODO - test this method by calling 1000 times and check connection leak
 	public List<Map<String, Object>> executeSelectNative(String sqlQuery,
-			BoilerplateMap<String, Object> parameters)
+			Map<String, Object> parameters)
 			throws BadRequestException {
 		Session session = null;
 		try {

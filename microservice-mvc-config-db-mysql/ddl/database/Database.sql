@@ -1,0 +1,2 @@
+Drop Database MicroserviceConfiguration;
+Create Database MicroserviceConfiguration;
